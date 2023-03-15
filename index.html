@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>generate password</h3>
+    <span class="t"></span>
+    <button id="generate">generate</button>
+    <script>
+        let generatePassword = document.getElementById("generate")
+        function generateP(){
+            
+            let generatedPassword = ''
+            
+            let char = "abcdefghijklmnopqrstuvwxyz1234567890@#$*" 
+            for(i =1; i < 9; i++){
+                var word = Math.floor(Math.random() * char.length + 1);
+                // console.log(word);
+                // console.log(char.charAt(word));
+                generatedPassword += char.charAt(word)
+                // generatedPassword += char.charAt(word);
+                // console.log(generatedPassword);
+            }
+             
+            
+            // console.log(generatedPassword)
+            return(generatedPassword);
+        }
+        generatePassword.addEventListener("click", ()=>{
+            console.log(generateP())
+            document.querySelector(".t").innerHTML = generateP();
+        })
+    </script>
+</body>
+</html>
